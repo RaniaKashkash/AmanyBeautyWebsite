@@ -208,7 +208,7 @@ footer {
   font-size: 1.2rem;
 }
 .social-icons a {
-  background-color:rgba(110, 108, 109, 0.377);
+  background-color: rgba(110, 108, 109, 0.377);
   color: white;
   width: 40px;
   height: 40px;
@@ -225,4 +225,153 @@ footer {
   font-size: 0.9rem;
   color: var(--secondary-color);
   width: 100%;
-  padding-top: 1rem;}
+  padding-top: 1rem;
+}
+
+/* --------------------------------------------- */
+/* Responsive Design - Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+  }
+  .logo-side > img {
+    width: 100px;
+  }
+  .links-side ul {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .hero-content .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-content .hero-description {
+    font-size: 1rem;
+  }
+  .hero-image img {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 2rem 1rem;
+  }
+  .section-title h2 {
+    font-size: 1.75rem;
+  }
+  .section-title > span {
+    font-size: 0.9rem;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Footer */
+  .social-icons {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* --------------------------------------------- */
+/* Responsive Design - Mobile Devices (480px and below) */
+@media screen and (max-width: 480px) {
+  /* Header */
+  header {
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .logo-side > img {
+    width: 80px;
+  }
+  .links-side ul {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .links-side ul li a {
+    font-size: 0.85rem;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .hero-content .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  .hero-content .hero-description {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  .hero-image img {
+    width: 100%;
+    max-width: 350px;
+  }
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Services Section */
+  .services-section {
+    padding: 1.5rem 0.5rem;
+  }
+  .section-title h2 {
+    font-size: 1.5rem;
+  }
+  .section-title > span {
+    font-size: 0.8rem;
+    display: block;
+  }
+  .card {
+    padding: 1rem 0.8rem;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+    margin-block: 0.8rem;
+  }
+  .card span {
+    font-size: 0.85rem;
+  }
+  .card-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .card i {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .social-icons {
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    padding-bottom: 0.8rem;
+  }
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+  }
+  .copy-right {
+    font-size: 0.8rem;
+    padding-top: 0.8rem;
+  }
+}
