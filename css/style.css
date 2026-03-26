@@ -1,15 +1,29 @@
 :root {
-  --main-color: #ffb7d7;
+  --main-color: rgb(219, 112, 148);
+  --secondary-color: rgb(126, 103, 111);
+  --icon-background: rgb(246, 238, 241);
+  --footer-background: rgb(56, 46, 49);
+  --hero-gradient: linear-gradient(
+    135deg,
+    hsl(340 40% 97%),
+    hsl(320 30% 95%),
+    hsl(280 20% 96%)
+  );
 }
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: poppins, sans-serif;
+  font-family: lato, sans-serif;
 }
 a {
   text-decoration: none;
   color: black;
+}
+h1,
+h2,
+h3 {
+  font-family: "Playfair", serif !important;
 }
 
 /* --------------------------------------------- */
@@ -18,7 +32,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: white;
   padding: 0.5rem 2rem;
+  position: sticky;
+  z-index: 1;
+  top: 0;
 }
 nav {
   display: flex;
@@ -36,11 +54,26 @@ nav {
 .links-side ul li {
   list-style: none;
 }
+.links-side ul li a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #f889ae;
+  transition: width 0.3s ease;
+}
+.links-side ul li a:hover:after {
+  width: 100%;
+}
+.links-side ul li a:hover {
+  color: var(--main-color);
+  transition: color 0.3s ease;
+}
 
 /* --------------------------------------------- */
 /* Hero section */
 .hero-section {
-  background-color: var(--main-color);
+  background: var(--hero-gradient);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +89,7 @@ nav {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
   }
   100% {
     transform: translateY(0px);
@@ -64,19 +97,25 @@ nav {
 }
 
 .hero-content .hero-title {
-  font-size: 4rem;
+  font-size: 3.75rem;
   margin: 0;
+  font-weight: 700;
+  line-height: 1;
 }
-
+.hero-title > span {
+  color: var(--main-color);
+  display: block;
+}
 .hero-content .hero-description {
   font-size: 1.25rem;
   margin-top: 1rem;
 }
 .cta-button {
-  background-color: #f889ae;
-  padding: 0.75rem 1.5rem;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.75rem 2rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 2rem;
   font-size: 1rem;
   cursor: pointer;
 }
@@ -87,32 +126,103 @@ nav {
 .cta-button a {
   color: white;
 }
+
 /* --------------------------------------------- */
 /* Services section */
 .services-section {
-  padding: 3rem;
+  padding: 4rem;
   text-align: center;
 }
-.services-section h2 {
-  font-size: 2.5rem;
-  padding-bottom: 0.5rem;
-  text-align: center;
+.section-title {
+  margin-bottom: 30px;
 }
+.section-title h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+.section-title > span {
+  color: var(--secondary-color);
+}
+
 .cards {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
 }
 .card {
   background-color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   flex: 1;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  position: relative;
   border-radius: 10px;
-  box-shadow: 10px 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 10px 4px rgba(0, 0, 0, 0.096);
+  transition: transform 0.4s ease-in-out;
 }
-.card i{
-  font-size: 2rem;
+
+.card:hover {
+  transform: translateY(-5px);
 }
+.card i {
+  font-size: 1.8rem;
+  color: var(--main-color);
+}
+.card-icon {
+  background-color: var(--icon-background);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+}
+.card h3 {
+  font-size: 1.4rem;
+  margin-block: 1rem;
+  margin-block: 0.8rem;
+}
+.card span {
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------- */
+/* Footer section */
+footer {
+  background-color: var(--footer-background);
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.social-icons a {
+  background-color:rgba(110, 108, 109, 0.377);
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.social-icons a:hover {
+  background-color: rgba(248, 135, 173, 0.795);
+}
+.copy-right {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  width: 100%;
+  padding-top: 1rem;}
